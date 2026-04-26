@@ -113,24 +113,12 @@ Si se prefiere instalar manualmente:
 pip install numpy==2.4.4 pandas==3.0.2 matplotlib==3.10.9 scikit-learn==1.8.0 ipykernel
 ```
 
-### 4. Obtener el dataset
+### 4. Abrir y ejecutar el notebook
 
-El archivo `olivetti_faces.npy` no se incluye en el repositorio por su tamaño.
-Generarlo toma menos de 10 segundos con scikit-learn, que lo descarga
-automáticamente desde su servidor:
-
-```python
-from sklearn.datasets import fetch_olivetti_faces
-import numpy as np
-
-data = fetch_olivetti_faces()
-np.save("olivetti_faces.npy", data.images)
-```
-
-Ejecutar ese bloque una sola vez en la misma carpeta del notebook. El archivo
-resultante pesa aproximadamente 12 MB.
-
-### 5. Abrir y ejecutar el notebook
+> **El dataset se descarga automaticamente.** La primera celda del notebook
+> detecta si `olivetti_faces.npy` existe en la carpeta. Si no existe, lo
+> descarga desde los servidores de scikit-learn (~12 MB) y lo guarda localmente.
+> Solo necesita conexion a internet la primera vez.
 
 **Opcion A — VS Code:**
 1. Abrir VS Code en la carpeta del proyecto.
